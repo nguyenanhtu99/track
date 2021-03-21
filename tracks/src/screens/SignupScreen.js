@@ -1,8 +1,5 @@
 import React, {useContext } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text } from 'react-native-elements';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import Spacer from '../components/Spacer';
 import { Context as AuthContext } from '../context/AuthContext';
 import AuthForm from '../components/AuthForm';
 import NavLink from '../components/NavLink';
@@ -37,9 +34,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     marginBottom: 100
-  },
-  link: {
-    color: 'blue'
   }
 });
 
