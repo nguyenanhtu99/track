@@ -8,6 +8,7 @@ import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 const TrackListScreen = ({ navigation }) => {
   const { state, fetchTracks } = useContext(TrackContext);
 
+  console.log(state)
   return (
     <>
       <NavigationEvents onWillFocus={fetchTracks} />
@@ -16,7 +17,9 @@ const TrackListScreen = ({ navigation }) => {
         data={state}
         keyExtractor={item => item._id}
         renderItem={({ item }) => {
-          return (<TouchableOpacity>
+          return (<TouchableOpacity onPress={() => {
+            navigation.navigate('TrackDetail', { _id: item._id });
+          }}>
             <ListItem>
               <ListItem.Content>
                 <ListItem.Title>{item.name}</ListItem.Title>
